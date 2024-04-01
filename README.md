@@ -1,4 +1,23 @@
-# WistonLite
+# Wiston Lite
+
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Introduction](#introduction)
+- [Maximum Voltages etc](#maximum-voltages-etc)
+   * [Usage notes.](#usage-notes)
+   * [How to solder these pads.](#how-to-solder-these-pads)
+- [Uses and How to connect them up.](#uses-and-how-to-connect-them-up)
+   * [One single, simple LED Output](#one-single-simple-led-output)
+   * [Connection to a Wemos D1 or Arduino for larger puzzle rooms.](#connection-to-a-wemos-d1-or-arduino-for-larger-puzzle-rooms)
+      + [Wemos D1:](#wemos-d1)
+      + [Arduino Uno:](#arduino-uno)
+- [Schematic and High Level "How it works"](#schematic-and-high-level-how-it-works)
+   * [Schematic](#schematic)
+   * [Theory of operation](#theory-of-operation)
+
+<!-- TOC end -->
+
+# Introduction
 A micro version of the Wiston Castle board that uses and external power source.
 Wiston Castle and the Wiston Lite both detect the presence of a magnet. This can be used to detect miniatures and objects in TTRPG gaming terrain etc.
 It can also be used for creative uses like replacing a power switch in a product with a magnet.
