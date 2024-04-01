@@ -4,18 +4,20 @@
 
 - [Introduction](#introduction)
 - [Maximum Voltages etc](#maximum-voltages-etc)
-   * [Usage notes.](#usage-notes)
+- [Beginners Usage Guide - One Magnet, One LED!](#beginners-usage-guide---one-magnet-one-led)
    * [How to solder these pads.](#how-to-solder-these-pads)
-- [Uses and How to connect them up.](#uses-and-how-to-connect-them-up)
+- [Advanced uses and How to connect them up.](#advanced-uses-and-how-to-connect-them-up)
    * [One single, simple LED Output](#one-single-simple-led-output)
    * [Connection to a Wemos D1 or Arduino for larger puzzle rooms.](#connection-to-a-wemos-d1-or-arduino-for-larger-puzzle-rooms)
       + [Wemos D1:](#wemos-d1)
       + [Arduino Uno:](#arduino-uno)
+   * [Connect to a larger LED or Flexiled Noodle LED](#connect-to-a-larger-led-or-flexiled-noodle-led)
 - [Schematic and High Level "How it works"](#schematic-and-high-level-how-it-works)
    * [Schematic](#schematic)
    * [Theory of operation](#theory-of-operation)
 
 <!-- TOC end -->
+
 
 # Introduction
 A micro version of the Wiston Castle board that uses and external power source.
@@ -42,7 +44,35 @@ An additional transistor was added to invert the output, so that the SIG output 
 - Minimum Input Power Range is 2V. (So, using a coin CR2032 battery should be fine)
 - Maximum output Current is about 5mA. (enough for 1 LED). If more power is needed, a Carew Castle LED Cloner can be used to drive up to 2Amps of current!
 
-## Usage notes.
+
+# Beginners Usage Guide - One Magnet, One LED!
+
+There are three solder pads on the board, flipping the board over shows which ones are which. 
+<!-- ![SuperCloseUpWL](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/e1133bd1-ba6f-4ced-bba7-68cb42df593c) -->
+<img src="https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/e1133bd1-ba6f-4ced-bba7-68cb42df593c.jpg" width="400" >
+
+- SIG = Normalized logic out (no magnet = 0V, magnet = vdd)
+- VDD = Power supply. Anything from about 2V up to 5V
+- GND = Ground, Lower voltage supply, Common. 
+
+There are also two holes for you to add an LED to light up when a magnet is present. The **LONG** leg of the LED goes in the + hole, the **SHORT** leg goes in the - hole.
+
+<img src="https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/1bd0ee30-6e3a-4084-ba4d-0eeffe730e88.jpg" width="400" >
+
+## How to solder these pads.
+
+I use wire wrap wire (That's 30AWG wire), trim about 3mm of plastic off.
+
+![solderpadgif](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/8db2dec7-ce0c-461a-91b3-e9817edf827c)
+
+Then add a blob of solder to the pad (might take a little flux to get it to flow nicely) then:
+- heat up the blob of solder
+- slide in the end of the wire
+- remove heat and allow the wire to cool in the solder.
+
+
+
+# Advanced uses and How to connect them up.
 The onboard SL12603 magnetic sensor can only drive a small led with up to 5mA or so. Enough for a simple candle, but not enough for more.
 Connecting wires to the board is quite simple. There are three solder pads and two holes for an onchip LED.
 Add some solder to each of the pads, then when ready, heat up the solder, slide some thing guage wire (wire wrap wire for example), slide the wire into the solder and remove the soldering iron to let the solder cool and harder, holding the LED on!
@@ -55,20 +85,6 @@ There are three solder pads on the board, flipping the board over shows which on
 - VDD = Power supply. Anything from about 2V up to 5V
 - GND = Ground, Lower voltage supply, Common. 
 
-## How to solder these pads.
-
-I use wire wrap wire (That's 30AWG wire), trim about 3mm of plastic off.
-
-![solderpadgif](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/8db2dec7-ce0c-461a-91b3-e9817edf827c)
-
-
-Then add a blob of solder to the pad (might take a little flux to get it to flow nicely) then:
-- heat up the blob of solder
-- slide in the end of the wire
-- remove heat and allow the wire to cool in the solder.
-
-# Uses and How to connect them up.
-For ideas on how to connect this board together and use it in your terrain builds, see below.
 
 ## One single, simple LED Output
 If you just want a simple LED output, then solder your LED to the two holes on the board. 
@@ -100,6 +116,9 @@ Link to a larger version: (https://github.com/Audio-Rochey/TerrainTronics-Wiston
 
 Arduino UNO's digital input pins handle up to 5V. Therefor, you can power your Wiston Castle from the 5V pin, or switch it on dynamically with an output pin.
 
+## Connect to a larger LED or Flexiled Noodle LED
+To drive a larger LED (like a 1Watt Star LED or a long Noodle LED), you'll need something that can boost the power.
+![LEDPinoutWL](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/1bd0ee30-6e3a-4084-ba4d-0eeffe730e88)
 
 
 # Schematic and High Level "How it works"
