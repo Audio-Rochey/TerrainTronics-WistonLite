@@ -57,19 +57,49 @@ The hole nearest the solder pads is the negative (short wire of the led) and the
 ## Connection to a Wemos D1 or Arduino for larger puzzle rooms.
 Care should be taken in doing this.
 ### Wemos D1:
-WistonLite should be powered with the same voltage as your Microcontroller/Arduino. For example, the Wemos D1 Mini actually runs from 3.3V, even though it's a USB powered device. Each of it's input and output pins operates from 3.3V. Therefor, your WistonLite should be powered from the 3.3V pin on the Wemos D1.
+
+Link to a larger version: ((https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/54d74897-8015-4be2-85f0-424c78e5db3d))
+
+![WemosD1SafeZoneThumbnail](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/ba128128-3580-4132-b771-115d530288f0)
+
+Wemos D1's have certain pins that cannot be connected to other circuits during power on. The safe pins on a Wemos D1 to connect external components to are:
+- D1
+- D2
+- D5
+- D6
+- D7
+
+The Wemos D1 Mini actually runs from 3.3V, even though it's a USB powered device. Each of it's input and output pins operates from 3.3V. Therefor, your WistonLite should be powered from the 3.3V pin on the Wemos D1.
 ### Arduino Uno:
+
+Link to a larger version: (https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/82020d38-e047-4c79-b27c-8247843d3878)
+
 ![Arduino Hookup Thumbnail](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/2f6bcb55-c5b5-4207-aca2-be6837f81ccc)
 
-Link to larger size: (https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/2b3d42ee-59e1-4d55-b634-384c4f61a230.jpg)
+Arduino UNO's digital input pins handle up to 5V. Therefor, you can power your Wiston Castle from the 5V pin, or switch it on dynamically with an output pin.
 
-Arduino UNO's digital input pins handle up to 5V. Therefor, you can power your Wiston Castle from the 5V pin.
+
 
 # Schematic and High Level "How it works"
 
 ## Schematic
 
+![WistonLiteSchematic](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/b45d84c1-d939-42b9-b57e-d280b8b8eb6f)
+
+
 ## Theory of operation
+
+The SL1603SL detects the presence of a magnet, regardless of polarity. It checks around 5 times per second. By doing so, it keeps it's power consumption at an absolute minimum.
+When the magnet is detected, it's output moves from VCC (3V or 5V) to GND. (It pulls low).
+
+The onboard LED holes connect the Anode (positive) pin of the LED to the supply voltage, and the Cathode (negative pin of the LED) to the output of the SL1603. When the magnet is not present, the LED sees VCC on both of it's pins, so no electricity flows. No light.
+As soon as the SL1603 pulls the LED Cathode (negative) pin to ground, electricity is allowed to flow through the LED.
+
+The extra transistor that's connected to SIGOUT inverts the output, so "no magnet" provides 0 (or GND) output and "magnet present" a 1 (or VCC).
+If you're connecting to a separate micrcontroller like an arduino, you can choose to either take the LED Cathode pin on your WistonList as an output (don't forget to use a "pullup" input configuration in Arduino!) or you can take the SIGOUT Signal. 
+
+
+  
 
 
 
