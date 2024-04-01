@@ -1,6 +1,9 @@
 # WistonLite
 A micro version of the Wiston Castle board that uses and external power source.
-These come in sets of 10 in a strip that can be separated by hand.
+Wiston Castle and the Wiston Lite both detect the presence of a magnet. This can be used to detect miniatures and objects in TTRPG gaming terrain etc.
+It can also be used for creative uses like replacing a power switch in a product with a magnet.
+
+These 10mm x 10mm boards come in sets of 10 in a strip that can be separated by hand.
 <!-- ![WistonLiteStrip](https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/ce2840ee-6b05-42fa-af4e-04f0be25f22c) -->
 
 <img src="https://github.com/Audio-Rochey/TerrainTronics-WistonLite/assets/15720888/ce2840ee-6b05-42fa-af4e-04f0be25f22c](https://github-production-user-asset-6210df.s3.amazonaws.com/15720888/318277969-ce2840ee-6b05-42fa-af4e-04f0be25f22c.jpg" width="400" >
